@@ -1,25 +1,10 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Site Back Up"
 date:   2015-07-30 11:44:31
-categories: jekyll update
+categories: random
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+After several weeks of downtime I finally got around to bringing my site back up. I'm moving off Wordpress and I'm now using [Jekyll](http://jekyllrb.com), the Ruby-based static site generator. I haven't played with it much but I like it. And boy do I love ruby... I'll migrate old posts over time, but I think I'm gonna change the tone and style of this blog, make it a little more general and... personal... so expect some mad shennanigans soon.
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
 
-Jekyll also offers powerful support for code snippets:
-
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
-
-Check out the [Jekyll docs][jekyll] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll’s dedicated Help repository][jekyll-help].
-
-[jekyll]:      http://jekyllrb.com
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-help]: https://github.com/jekyll/jekyll-help
+My head is exploding with ideas.
