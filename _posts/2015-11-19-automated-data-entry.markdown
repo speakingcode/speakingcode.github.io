@@ -1,6 +1,6 @@
 ---
 layout: post
-title "Automated Data Entry"
+title: "Automated Data Entry"
 date: 2015-11-19 13:55:55
 categories: random, irc, society
 ---
