@@ -16,18 +16,18 @@ In Rails 4, changing the primary key of a model to something other than the defa
 First, in our ActiveRecord migrations, we can create tables in the database with a primary key other than the default 'id'...
 
 {% highlight ruby %}
-    class CreateParents < ActiveRecord::Migration
-      def change
-        create_table  :parents,
-        {
-          :id           => false,
-          :primary_key  => :parent_name
-        } do |t|
-          t.string :parent_name
-          #...
-        end
-      end
+class CreateParents < ActiveRecord::Migration
+  def change
+    create_table  :parents,
+    {
+      :id           => false,
+      :primary_key  => :parent_name
+    } do |t|
+      t.string :parent_name
+      #...
     end
+  end
+end
 {% endhighlight %}
 
 ### Models
