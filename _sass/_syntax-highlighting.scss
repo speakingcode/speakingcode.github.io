@@ -1,6 +1,10 @@
 /**
  * Syntax highlighting styles
  */
+code {
+  background: #000;
+}
+
 .highlight {
     background: #000;
     @extend %vertical-rhythm;
