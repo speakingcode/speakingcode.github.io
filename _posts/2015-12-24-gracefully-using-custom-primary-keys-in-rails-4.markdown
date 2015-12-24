@@ -34,10 +34,10 @@ end
 Now we need to state that primary key in our model classes...
 
 {% highlight ruby %}
-    class Parent < ActiveRecord::Base
-      self.primary_key = "parent_name"
-      #...
-    end
+class Parent < ActiveRecord::Base
+  self.primary_key = "parent_name"
+  #...
+end
 {% endhighlight %}
 
 ### Associations
@@ -45,25 +45,25 @@ Now we need to state that primary key in our model classes...
 Associations in models expect the foreign key field referencing a table 't' to be named 't_id', but that name is not very practical if t's primary key is something other than 'id'. We can name the foreign key field something that matches the related model's primary key...
 
 {% highlight ruby %}
-    class CreateChildren < ActiveRecord::Migration
-      def change
-        create_table :children do |t|
-          #foreign-key field
-          t.string :parent_name
-          #...
-        end
-      end
+class CreateChildren < ActiveRecord::Migration
+  def change
+    create_table :children do |t|
+      #foreign-key field
+      t.string :parent_name
+      #...
     end
+  end
+end
 {% endhighlight %}
 
 ...and then explicitly state the name of the foreign key field to use for the association...
 
 {% highlight ruby %}
-    class Child < ActiveRecord::Base
-      belongs_to  :parent,
-                  :foreign_key => 'parent_name'</p>
-      #...
-    end
+class Child < ActiveRecord::Base
+  belongs_to  :parent,
+              :foreign_key => 'parent_name'</p>
+  #...
+end
 {% endhighlight %}
 
 ### Routes
@@ -71,11 +71,11 @@ Associations in models expect the foreign key field referencing a table 't' to b
 The _resources_ method, which generates routes corresponding to CRUD operations for a particular model, maps end-point URLs to actions in the controller. Expecting the primary key of models to be 'id', _resources_ will name the identifying parameter of a resource (taken from the matched URL) as :**id**. In the case of nested resources, each parent resource in the hierarchy is identified by a parameter with '_id' appended to the name of the resource, such as **:parent_id**, while the bottom-level resources are still identified by the **:id ** parameter...
 
 {% highlight ruby %}
-    Example::Application.routes.draw do
-      resources :parents do
-        resources :children
-      end
-    end
+Example::Application.routes.draw do
+  resources :parents do
+    resources :children
+  end
+end
 {% endhighlight %}
 
 Results in these routes:
@@ -100,19 +100,19 @@ Results in these routes:
 This means our ParentController will have the param :id availble to identify the correct parent for an action, and our ChildrenController will have the param :parent_id available to it to identify the associated Parent when restricting our actions to children of a particular parent. Then we would have to retrieve our models with code like this:
 
 {% highlight ruby %}
-    @parent   = Parent.find(:id)
-    @children = Child.where(:parent_name => params[:parent_id])
+@parent   = Parent.find(:id)
+@children = Child.where(:parent_name => params[:parent_id])
 {% endhighlight %}
 
 That works, but it is misleading and suggests that the primary key of a Parent is 'id', and presumably an integer, neither of which is the case. This can cause confusion for other developers or our future-selves, especially if looking at the enummerated routes as documentation for our RESTful API. Luckily, though, Rails 4 has a very convenient way of specifying a unique name for our URL when using _resources_: the **:param** option. Passing that along to the _resource_ method will cause Rails to generate the appropriate routes.
 
 {% highlight ruby %}
-    Example::Application.routes.draw do
-      resources :parents,
-                :param => :parent_name do
-        resources :children
-      end
-    end
+Example::Application.routes.draw do
+  resources :parents,
+            :param => :parent_name do
+    resources :children
+  end
+end
 {% endhighlight %}
 
 This will result in these routes:
