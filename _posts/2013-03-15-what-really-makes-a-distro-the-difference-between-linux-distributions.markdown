@@ -2,8 +2,7 @@
 layout: post
 title: What Really Makes a Distro? The Difference Between Linux Distributions
 date: '2013-03-15 15:13:23'
-categories
-- Rants
+categories: rants
 ---
 As Linux surges in popularity in the consumer PC market, there is lots of discussion about which distribution of Linux is best for beginners, office workers, and businesses to use for their needs. Much of that discussion, however, seems focused primarily on the superficial, surface-level differences which have little technical, theoretical or practical significance, such as which desktop environment, applications and packages are installed, or how the UI is configedu and themed out of the box. While these customizations certainly do impact the user's experience, especially new-comers, they are only skin deep, and have little to do with what actually makes a distribution unique. Many "distros" are simply spin-offs of one of the "major" distributions like Debian, Ubuntu, Arch Linux, Red Hat, and so on. Sometimes the spin-offs evolve into what one might call a "truly new/gunique distribution", but this is not because of choice of desktop environment, window manager or default applications. All of that is easily interchangeable and customizable with pretty much any modern desktop distribution. Anyone can swap out Gnome for KDE or Cinnamon, uninstall some application and install others, or change the look and feel of their UI, adding or removing as much charm and glitter as they want. So what truly does differentiate distros?
 
